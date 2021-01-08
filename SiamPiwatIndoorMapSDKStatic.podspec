@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.swift_version = "5.3"
   s.source       = { :git => "https://github.com/itthisakp/IndoorMapSDK.git", :tag => "#{s.version}" }
   s.vendored_libraries = "libIndoorMap-Static.a"
-  s.source_files = '**/*.h'
+  s.source_files = '*.{a,h}'
   s.requires_arc = true
   s.dependency "RxSwift", "5.1.1"
   s.dependency "RxCocoa", "5.1.1"
