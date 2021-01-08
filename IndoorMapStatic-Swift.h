@@ -188,6 +188,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -204,6 +205,39 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="IndoorMapStatic",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
+typedef SWIFT_ENUM_NAMED(NSInteger, SPWDepartmentSlug, "SPWDepartmentSlugObjC", closed) {
+/// Siam Center
+  SPWDepartmentSlugSiamCenter = 0,
+/// Siam Discovery
+  SPWDepartmentSlugSiamDiscovery = 1,
+/// Siam Paragon
+  SPWDepartmentSlugSiamParagon = 2,
+};
+
+enum SPWLanguage : NSInteger;
+@protocol UIApplicationDelegate;
+
+SWIFT_CLASS_NAMED("SPWIndoorMapSDKManagerObjC")
+@interface SPWIndoorMapManager : NSObject
++ (void)initialSDKWithSlug:(enum SPWDepartmentSlug)slug shops:(NSArray<NSDictionary<NSString *, id> *> * _Nonnull)shops language:(enum SPWLanguage)language appDelegate:(Class <UIApplicationDelegate> _Nonnull)appDelegate;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, SPWLanguage, "SPWLanguageObjC", closed) {
+/// Thai
+  SPWLanguageTh = 0,
+/// English
+  SPWLanguageEn = 1,
+/// Chinese
+  SPWLanguageCn = 2,
+};
+
+
+
+
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

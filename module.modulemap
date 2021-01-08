@@ -1,3 +1,0 @@
-module IndoorMapSDK {
-    header "IndoorMapStatic-Swift.h"
-}
